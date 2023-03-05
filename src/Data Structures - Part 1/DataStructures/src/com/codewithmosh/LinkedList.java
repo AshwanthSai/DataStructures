@@ -1,21 +1,21 @@
 import java.util.NoSuchElementException;
 
 public class LinkedList {
-  private class Node {
+  private class MyNode {
     private int value;
-    private Node next;
+    private MyNode next;
 
-    public Node(int value) {
+    public MyNode(int value) {
       this.value = value;
     }
   }
 
-  private Node first;
-  private Node last;
+  private MyNode first;
+  private MyNode last;
   private int size;
 
   public void addLast(int item) {
-    var node = new Node(item);
+    var node = new MyNode(item);
 
     if (isEmpty())
       first = last = node;
@@ -28,7 +28,7 @@ public class LinkedList {
   }
 
   public void addFirst(int item) {
-    var node = new Node(item);
+    var node = new MyNode(item);
 
     if (isEmpty())
       first = last = node;
@@ -89,10 +89,10 @@ public class LinkedList {
     size--;
   }
 
-  private Node getPrevious(Node node) {
+  private MyNode getPrevious(MyNode myNode) {
     var current = first;
     while (current != null) {
-      if (current.next == node) return current;
+      if (current.next == myNode) return current;
       current = current.next;
     }
     return null;

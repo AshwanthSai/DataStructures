@@ -1,2 +1,3 @@
-package LinkedList;public class Node {
-}
+package LinkedList;
+
+
