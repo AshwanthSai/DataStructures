@@ -181,8 +181,8 @@ public class LinkedList {
     return false;
   }
 
-  public static LinkedList.LinkedList.LinkedList createWithLoop() {
-    var list = new LinkedList.LinkedList.LinkedList();
+  public static LinkedList createWithLoop() {
+    var list = new LinkedList();
     list.addLast(10);
     list.addLast(20);
     list.addLast(30);

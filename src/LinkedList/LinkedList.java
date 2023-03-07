@@ -60,7 +60,9 @@ public class LinkedList {
             last = node;
         }
         // [10 -> 20 -> 30 -> 40]
-
+        // [10 -> 20 -> 30 -> 40 -> x]
+        last.nextNode = node;
+        last = node;
     }
 
     public void addFirst(int value) {
@@ -75,18 +77,23 @@ public class LinkedList {
         var head = first;
         node.nextNode = head;
         first = node;
-        size++;
+        System.out.println("Added value " + value);
+    }
+
+    public int indexOf(int value) {
+        var node = new MyNode(value);
+        int index = 0;
+        var current = first;
+        while(current != null) {
+            if(current.equals(node)) return index;
+            current = current.nextNode;
+            index++;
+        }
+        return -1;
     }
 
     // We abstracted the repeated logic here.
-    public MyNode previousNode(MyNode node) {
-        var current = first;
-        while(current != null) {
-            if(current.nextNode.equals(node)) return current;
-            current = current.nextNode;
-        }
-        return null;
-    }
+
 
     public boolean isEmpty() {
         return (first == null);
@@ -101,7 +108,6 @@ public class LinkedList {
             myArr[index++] = current.value;
             current = current.nextNode;
         }
-
         return myArr;
     }
 
@@ -112,5 +118,4 @@ public class LinkedList {
             current = current.nextNode;
         }
     }
-
 }
